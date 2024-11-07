@@ -13,7 +13,7 @@ export const ShortenForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4">
+    <form onSubmit={handleSubmit} className="mb-10">
       <div className="space-y-4">
         <Input
           type="url"

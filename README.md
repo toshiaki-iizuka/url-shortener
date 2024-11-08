@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Image
 
-## Getting Started
+![Create-Next-App](https://github.com/user-attachments/assets/c859a6ec-3785-4fce-9b7b-6eecf4f51edc)
 
-First, run the development server:
+## Tools & Packages Used
+
+- Shadcn UI: <https://ui.shadcn.com/docs/installation/next>
+- Nextjs: <https://nextjs.org/>
+- NanoId: <https://www.npmjs.com/package/nanoid>
+
+## Installation Steps
+
+1. **Start the Docker environment**
+
+To launch the application and database in Docker, first, run the following command:。
+
+```bash
+docker compose up -d
+```
+
+This command will start the Docker containers in the background.
+
+2. **Start the development server**
+
+Next, start the development server by running:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can access the application in your browser at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Apply the schema to the database with Prisma**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Use Prisma to sync the schema to the database. The `push` command reflects the schema directly onto the database without generating a migration file.
 
-## Learn More
+```bash
+npx prisma db push
+```
 
-To learn more about Next.js, take a look at the following resources:
+This command synchronizes the Prisma schema with the database.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Open Prisma Studio**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Prisma Studio is a GUI tool that allows you to directly view and manage database data. To open Prisma Studio, execute the following command:
 
-## Deploy on Vercel
+```bash
+npx prisma studio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This will open [http://localhost:5555](http://localhost:5555) in your browser, where you can view and edit the database content.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Reference
+
+- Prisma NextJs Guide: <https://www.cand.site/blog/prisma-nextjs-guide>

@@ -1,0 +1,10 @@
+# cp env .env
+# After copying, set the environment variables
+
+DB_HOST=db
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=postgres
+
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/url-shortener"
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"

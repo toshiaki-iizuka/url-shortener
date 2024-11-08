@@ -10,7 +10,27 @@
 
 ## Installation Steps
 
-1. **Start the Docker environment**
+1. **Set Up Environment Variables**
+
+Create a new file named `.env` in the root of your project and add the following content:
+
+```env
+DB_HOST=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+
+DATABASE_URL=
+NEXT_PUBLIC_BASE_URL=
+```
+
+or run the following command:
+
+```bash
+cp env .env
+```
+
+2. **Start the Docker environment**
 
 To launch the application and database in Docker, first, run the following command:。
 
@@ -20,7 +40,7 @@ docker compose up -d
 
 This command will start the Docker containers in the background.
 
-2. **Start the development server**
+3. **Start the development server**
 
 Next, start the development server by running:
 
@@ -30,7 +50,7 @@ npm run dev
 
 You can access the application in your browser at [http://localhost:3000](http://localhost:3000).
 
-3. **Apply the schema to the database with Prisma**
+4. **Apply the schema to the database with Prisma**
 
 Use Prisma to sync the schema to the database. The `push` command reflects the schema directly onto the database without generating a migration file.
 
@@ -40,7 +60,7 @@ npx prisma db push
 
 This command synchronizes the Prisma schema with the database.
 
-4. **Open Prisma Studio**
+5. **Open Prisma Studio**
 
 Prisma Studio is a GUI tool that allows you to directly view and manage database data. To open Prisma Studio, execute the following command:
 
